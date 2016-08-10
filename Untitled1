@@ -1,0 +1,7 @@
+    <% if File.extname(s) == ".txt" %>
+    <% #Button sensds full file url to make csv in controller %>
+      <%= form_tag("/tocsv", method: "post") do %>
+        <%= hidden_field_tag(:file_path, file.file.path,) %>
+        <%= submit_tag("Make CSV") %>
+      <% end %>
+    <% end %>

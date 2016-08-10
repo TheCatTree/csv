@@ -1,0 +1,20 @@
+<h2>Welcome DEbug View Alpha 0.2.0</h2> 
+<h3>{{ember-inline-edit
+      value = model.name
+      onSave = (action "save")
+      }}</h3>
+<ul>
+  
+  {{#each model.events as |event|}}
+  <li>
+
+    {{log-instance
+      level=event.pair.level
+      event=event
+      save = (action "savelog")
+    }}
+    
+  </li>
+  {{/each}}
+
+</ul>

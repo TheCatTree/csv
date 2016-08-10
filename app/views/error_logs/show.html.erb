@@ -1,0 +1,5 @@
+What a lovley show
+
+<% for instance in @log.events.all %>
+ <h2><%= instance.pair.level %><%= instance.pair.symbol %><%= instance.time %></h2>
+<% end %>

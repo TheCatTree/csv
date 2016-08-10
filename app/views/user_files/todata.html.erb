@@ -1,0 +1,23 @@
+For the love of god
+
+<% for file in @file %>
+
+    <h2><%= link_to File.basename(file.file.url), file.file.url if file.file? %></h2>
+    <!--If file is .txt make button -->
+    <% if File.extname(file.file.path.to_s) == ".txt" %>
+    <% #Button sensds full file url to make csv in controller %>
+      <%= form_tag(tocsv_user_files_path, method: "post") do %>
+        <%= hidden_field_tag(:file_path, file.file.path.to_s,) %>
+        <%= submit_tag("Make CSV") %>
+      <% end %>
+      <% end %>
+       <% if File.extname(file.file.path.to_s) == ".csv" %>
+    <% #Button sensds full file url to make csv in controller %>
+      <%= form_tag(todata_user_files_path, method: "post") do %>
+        <%= hidden_field_tag(:file_path, file.file.path.to_s,) %>
+        <%= submit_tag("Make Database") %>
+      <% end %>
+    <% end %>
+
+
+<% end %>

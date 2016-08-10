@@ -1,0 +1,18 @@
+
+    {{indent}}
+    {{event.time}}
+    {{event.pair.level}}
+    {{event.pair.symbol}}
+    {{event.pair.vamount}}
+    {{#each event.variables as |variable|}}
+        {{variable.no}}
+        <span>{{ember-inline-edit
+          value = variable.name
+          onSave = (action "save")
+        }}</span>
+        {{variable.vtype}}
+        {{variable.value}}
+    {{/each}}
+    
+
+

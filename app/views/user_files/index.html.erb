@@ -1,0 +1,30 @@
+I am all
+
+<% for f in @files %>
+
+    <h2><%= link_to File.basename(f.file.url), f.file.url if f.file? %></h2>
+    <!--If file is .txt make button -->
+    <% if File.extname(f.file.path.to_s) == ".txt" %>
+    <% #Button sensds full file url to make csv in controller %>
+      <%= form_tag(tocsv_user_files_path, method: "post") do %>
+        <%= hidden_field_tag(:file_path, f.file.path.to_s,) %>
+        <%= submit_tag("Make CSV") %>
+      <% end %>
+      <% end %>
+       <% if File.extname(f.file.path.to_s) == ".csv" %>
+    <% #Button sensds full file url to make csv in controller %>
+      <%= form_tag(todata_user_files_path, method: "post") do %>
+        <%= hidden_field_tag(:file_path, f.file.path.to_s,) %>
+        <%= submit_tag("Make Database") %>
+      <% end %>
+    <% end %>
+    <% #Button to delete the file %>
+    | <%= link_to "delete", f, method: :delete,
+                                  data: { confirm: "You sure?" } %>|
+<% end %>
+
+<% for data in @db %>
+    <!--Make a link to the database show -->
+    <%= link_to data.name, :controller => "ember", :action => "bootstrap", :id => data  %>
+    <h2><%= link_to data.name,  errorlog_path(data)  %></h2>
+<% end %>
