@@ -7,7 +7,7 @@ class EmberController < ApplicationController
   private 
     def db_id
       if (params.has_key?(:id))
-        cookies.permanent.signed[:db_id] = params.require(id)
+        cookies.permanent[:db_id] = params.require(:id)
       end
     end
   

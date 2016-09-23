@@ -23,6 +23,7 @@
 <% end %>
 
 <% for data in @db %>
+<%= link_to data.name, :controller => "ember", :action => "bootstrap", :id => data  %>
     <!--Make a link to the database show -->
     <h2><%= link_to data.name,  errorlog_path(data)  %></h2>
 <% end %>

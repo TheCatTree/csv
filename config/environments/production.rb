@@ -82,11 +82,11 @@ Rails.application.configure do
   host = '<your heroku app>.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
- :address              => "smtp.gmail.com",
+ :address              => "smtp.gmail.com", # use ENV GEMAIL
  :port                 => 587,
  :domain               =>'example.com',
- :user_name            => ENV['gmail_username'],
- :password             => ENV['gmail_password'],
+ :user_name            => ENV['gmail_username'],#use ENV GEMAIL
+ :password             => ENV['gmail_password'], #use ENC PWORD
  :authentication       => "plain",
 :enable_starttls_auto => true
   }
