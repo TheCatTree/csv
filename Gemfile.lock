@@ -109,7 +109,9 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-    pg (0.18.4)
+    passenger (5.0.30)
+      rack
+      rake (>= 0.8.1)
     pkg-config (1.1.7)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -193,7 +195,7 @@ DEPENDENCIES
   ember-cli-rails
   jbuilder (~> 2.0)
   jquery-rails
-  pg (= 0.18.4)
+  passenger
   rails (= 4.2.2)
   rails_12factor
   sass-rails (~> 5.0)

@@ -58,6 +58,6 @@ gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg', '0.18.4'
+  gem 'passenger'
 end
 gem 'rails_12factor', group: [:staging, :production]
