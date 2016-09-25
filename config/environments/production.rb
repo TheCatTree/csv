@@ -85,8 +85,8 @@ Rails.application.configure do
  :address              => "smtp.gmail.com", # use ENV GEMAIL
  :port                 => 587,
  :domain               =>'example.com',
- :user_name            => ENV['gmail_username'],#use ENV GEMAIL
- :password             => ENV['gmail_password'], #use ENC PWORD
+ :user_name            => ENV['GEMAIL'],#use ENV GEMAIL
+ :password             => ENV['PWORD'], #use ENC PWORD
  :authentication       => "plain",
 :enable_starttls_auto => true
   }
